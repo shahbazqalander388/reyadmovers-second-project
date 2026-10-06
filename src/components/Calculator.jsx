@@ -37,7 +37,7 @@ export default function Calculator() {
         : 'Stairs 3+ floors (درج دور 3 فما فوق)';
 
     const messageText = [
-      `*Moving Quote Request - Riyadh Movers & Experts*`,
+      `*Moving Quote Request - Riyadh Movers Services*`,
       `السلام عليكم، أود الحصول على تسعير لنقل العفش:`,
       `---------------------------------`,
       `• *Property Type:* ${currentProperty.name} (${currentProperty.arabicName})`,
@@ -54,27 +54,27 @@ export default function Calculator() {
   }, [currentProperty, pickupDistrict, dropoffDistrict, elevator, carpenterRequired, bubbleWrapRequired, tvCurtainsRequired]);
 
   return (
-    <section id="calculator" className="py-20 sm:py-24 bg-slate-900 relative">
+    <section id="calculator" className="py-12 sm:py-20 bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
             <CalcIcon className="w-4 h-4" />
             Instant Moving Quote
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
             Get Your Custom Moving Quote in Riyadh
           </h2>
-          <p className="font-arabic text-xl text-emerald-400 font-semibold">
+          <p className="font-arabic text-lg sm:text-xl text-emerald-400 font-semibold">
             حدد تفاصيل نقلك واحصل على تسعير فوري ومباشر
           </p>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-300 text-xs sm:text-base leading-relaxed">
             Select your property size, pickup & delivery locations in Riyadh, and required carpentry services to receive an instant transparent quote on WhatsApp.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Controls Form */}
-          <div className="lg:col-span-7 bg-slate-950 rounded-2xl border border-slate-800 p-6 sm:p-8 space-y-8 shadow-xl">
+          <div className="lg:col-span-7 bg-slate-950 rounded-2xl border border-slate-800 p-4 sm:p-8 space-y-6 sm:space-y-8 shadow-xl">
             {/* Step 1: Property Type */}
             <div className="space-y-3">
               <label className="text-sm font-bold text-white flex items-center justify-between">
@@ -155,7 +155,7 @@ export default function Calculator() {
                 <span>3. Elevator Availability</span>
                 <span className="font-arabic text-xs text-slate-400">توفر المصعد في المبنى</span>
               </label>
-              <div className="grid grid-cols-3 gap-2.5 text-xs sm:text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5 text-xs sm:text-sm">
                 {[
                   { id: 'yes', label: 'Elevator Available', arLabel: 'يوجد مصعد' },
                   { id: 'stairs_low', label: 'Stairs (1-2 Floors)', arLabel: 'درج (دور 1-2)' },
@@ -165,7 +165,7 @@ export default function Calculator() {
                     key={item.id}
                     type="button"
                     onClick={() => setElevator(item.id)}
-                    className={`p-3 rounded-xl border text-center transition-all ${
+                    className={`p-2.5 sm:p-3 rounded-xl border text-center transition-all ${
                       elevator === item.id
                         ? 'bg-emerald-500/15 border-emerald-500 text-white font-semibold'
                         : 'bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700'
@@ -256,7 +256,7 @@ export default function Calculator() {
 
           {/* Real-time Move Summary & Instant Quote Card */}
           <div className="lg:col-span-5 sticky top-28">
-            <div className="rounded-2xl bg-gradient-to-br from-slate-950 to-slate-900 border-2 border-emerald-500/40 p-6 sm:p-8 space-y-6 shadow-2xl shadow-emerald-500/10">
+            <div className="rounded-2xl bg-gradient-to-br from-slate-950 to-slate-900 border-2 border-emerald-500/40 p-4 sm:p-8 space-y-4 sm:space-y-6 shadow-2xl shadow-emerald-500/10">
               <div className="flex items-center justify-between border-b border-slate-800 pb-4">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">

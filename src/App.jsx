@@ -3,6 +3,7 @@ import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ServicesGrid from './components/ServicesGrid';
+import WorkGallery from './components/WorkGallery';
 import WhyChooseUs from './components/WhyChooseUs';
 import Calculator from './components/Calculator';
 import ProcessFlow from './components/ProcessFlow';
@@ -26,8 +27,11 @@ export default function App() {
         {/* Hero Section with H1, trust badges and dual CTAs */}
         <Hero />
 
-        {/* 6 Core Relocation Services */}
+        {/* 6 Core Relocation Services with real photos */}
         <ServicesGrid />
+
+        {/* Real Projects Photo Gallery with Lightbox */}
+        <WorkGallery />
 
         {/* 4-Pillar Trust Section */}
         <WhyChooseUs />

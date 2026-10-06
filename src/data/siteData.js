@@ -1,14 +1,16 @@
 export const BUSINESS_INFO = {
-  name: "Riyadh Movers & Experts",
-  arabicName: "خبراء نقل العفش بالرياض",
-  tagline: "Premier Moving, Packing & Carpentry Services Across Riyadh & Saudi Arabia",
+  name: "Riyadh Movers Services",
+  arabicName: "خبراء خدمات نقل العفش بالرياض",
+  tagline: "Safe Move • Better Tomorrow | Premier Moving, Packing & Carpentry Across Riyadh & KSA",
   arabicTagline: "خدمات نقل وتغليف وفك وتركيب الأثاث بأعلى معايير الأمان في الرياض وكافة مدن المملكة",
+  logo: "/logo.png",
+  cloudinaryLogo: "https://res.cloudinary.com/dai2g47e4/image/upload/v1791318878/ChatGPT_Image_Oct_7_2026_01_34_01_AM_nnqlty.png",
   phone: "+966 56 469 4614",
   phoneRaw: "+966564694614",
   phoneHref: "tel:+966564694614",
   whatsappNumber: "966564694614",
-  defaultWhatsAppMessage: "Hello Riyadh Movers, I need a quotation",
-  whatsappHref: "https://wa.me/966564694614?text=Hello%20Riyadh%20Movers,%20I%20need%20a%20quotation",
+  defaultWhatsAppMessage: "Hello Riyadh Movers Services, I need a quotation",
+  whatsappHref: "https://wa.me/966564694614?text=Hello%20Riyadh%20Movers%20Services,%20I%20need%20a%20quotation",
   email: "Khankeratmat453@gmail.com",
   emailHref: "mailto:Khankeratmat453@gmail.com",
   address: "Riyadh, Kingdom of Saudi Arabia",
@@ -31,90 +33,84 @@ export const BUSINESS_INFO = {
 export const SERVICES = [
   {
     id: "residential",
-    title: "Residential House & Apartment Shifting",
-    arabicTitle: "نقل شقق ومنازل سكنية",
-    description: "Effortless home relocation with complete door-to-door care, heavy furniture transport, and meticulous room-by-room unpacking.",
-    arabicDescription: "نقل أثاث الشقق والمنازل بأمان تام مع فك وتركيب وترتيب الغرف في موقعك الجديد دون عناء.",
+    title: "House & Apartment Moving",
+    arabicTitle: "نقل شقق ومنازل",
+    description: "Safe house & apartment moving in Riyadh.",
+    arabicDescription: "نقل شقق ومنازل بأمان وسرعة.",
+    image: "/images/gallery/work-2.jpg",
     features: [
-      "Custom room labeling & organizing",
-      "Specialized protective blankets & floor padding",
-      "Fast same-day residential turnover",
-      "Careful handling of electronics & fragile decor"
+      "Same-day service",
+      "Furniture protection"
     ],
     badge: "Most Popular",
     icon: "Home"
   },
   {
     id: "villa",
-    title: "Villa Relocation & Heavy Furniture Moving",
-    arabicTitle: "نقل فلل وأثاث ثقيل وفخم",
-    description: "Turnkey multi-story villa moving using high-capacity enclosed Dyna trucks, hydraulic lifters, and specialized teams for large luxury estates.",
-    arabicDescription: "فريق متكامل لنقل الفلل والقصور والأثاث الضخم والمجالس الكبيرة بأحدث شاحنات الدينا المغلقة.",
+    title: "Villa Relocation",
+    arabicTitle: "نقل فلل وقصور",
+    description: "Enclosed Dyna trucks for luxury villas.",
+    arabicDescription: "نقل فلل وقصور بشاحنات دينا مغلقة.",
+    image: "/images/gallery/work-8.jpg",
     features: [
-      "Multi-story furniture hoist & heavy lifting gear",
-      "Protection for marble floors & luxury staircases",
-      "Chandeliers, grand pianos & antique packing",
-      "Dedicated move supervisor on-site"
+      "Closed Dyna fleet",
+      "Careful handling"
     ],
     badge: "Premium Care",
     icon: "Shield"
   },
   {
     id: "office",
-    title: "Office & Commercial Relocation",
-    arabicTitle: "نقل مكاتب وشركات ومؤسسات",
-    description: "Zero-downtime office relocation for workstations, IT server racks, conference tables, executive cabins, and sensitive document archives.",
-    arabicDescription: "نقل احترافي للمكاتب والشركات مع حماية أجهزة الكمبيوتر والسيرفرات والملفات لضمان استمرارية العمل.",
+    title: "Office Moving",
+    arabicTitle: "نقل مكاتب وشركات",
+    description: "Fast corporate shifting with zero downtime.",
+    arabicDescription: "نقل مكاتب وشركات دون توقف العمل.",
+    image: "/images/gallery/work-1.jpg",
     features: [
-      "After-hours & weekend shifting to minimize downtime",
-      "Numbered antistatic IT equipment wrapping",
-      "Modular workstation disassembly & setup",
-      "Secure confidential file packing"
+      "IT equipment care",
+      "Flexible timing"
     ],
     badge: "Corporate",
     icon: "Building2"
   },
   {
     id: "carpentry",
-    title: "Professional Dismantling & Assembly (Najjar)",
-    arabicTitle: "نجار فك وتركيب غرف نوم ومطابخ",
-    description: "Certified master carpenters (نجار محترف) skilled in IKEA, Home Centre, Ashley, and customized Italian wardrobes, beds, and modular kitchens.",
-    arabicDescription: "نجارون متخصصون في فك وتركيب غرف النوم التركية والصينية وايكيا ومطابخ الألمنيوم والستائر والشاشات.",
+    title: "Carpentry (Najjar)",
+    arabicTitle: "فك وتركيب نجار",
+    description: "Master carpenters for IKEA & bedrooms.",
+    arabicDescription: "فك وتركيب نجار لغرف النوم وايكيا.",
+    image: "/images/gallery/work-4.jpg",
     features: [
-      "Mastery of IKEA, Home Centre & Italian hardware",
-      "Wall TV mounting & heavy curtain rod installation",
-      "Kitchen cabinet adjustments & secure re-fixing",
-      "Replacement screws & bracket reinforcement"
+      "IKEA & Turkish sets",
+      "Curtains & TV mounting"
     ],
     badge: "Master Najjar",
     icon: "Wrench"
   },
   {
     id: "packing-storage",
-    title: "Safe Storage & Bubble Wrapping Solutions",
-    arabicTitle: "تغليف احترافي وتخزين آمن",
-    description: "Multi-layered protective packing utilizing multi-ply bubble wrap, thick stretch film, corrugated corner protectors, and sturdy wardrobe carton boxes.",
-    arabicDescription: "أجود خامات التغليف من نايلون فقاعي مقوى وكراتين شحن سميكة لحماية الزجاج والتحف والأثاث الحساس.",
+    title: "Packing & Boxes",
+    arabicTitle: "تغليف وكراتين",
+    description: "Bubble wrap & heavy cartons for breakables.",
+    arabicDescription: "تغليف بابلز وكراتين لحماية الزجاج.",
+    image: "/images/gallery/work-3.jpg",
     features: [
-      "5-layer heavy duty corrugated carton boxes",
-      "High-density bubble wrap & shrink film sealing",
-      "Padded mattress & sofa protective covers",
-      "Short & long-term clean storage options in Riyadh"
+      "Thick bubble wrap",
+      "Heavy-duty boxes"
     ],
     badge: "Export Quality",
     icon: "Package"
   },
   {
     id: "intercity",
-    title: "Inter-City Moving Across Saudi Arabia",
-    arabicTitle: "نقل عفش بين مدن المملكة",
-    description: "Long-distance moving from Riyadh to Jeddah, Dammam, Mecca, Medina, Al Khobar, Tabuk, and all provinces in sealed, GPS-tracked fleet trucks.",
-    arabicDescription: "نقل آمن وسريع من الرياض إلى كافة مدن ومحافظات المملكة بشاحنات مجهزة ومغلقة.",
+    title: "Inter-City Moving",
+    arabicTitle: "نقل بين المدن",
+    description: "Direct express transport to all KSA.",
+    arabicDescription: "نقل سريع من الرياض لكافة مدن المملكة.",
+    image: "/images/gallery/work-9.jpg",
     features: [
-      "Direct express delivery to all KSA regions",
-      "GPS-monitored enclosed Dyna trucks",
-      "Transit cargo protection guarantee",
-      "Flexible schedule with tracking updates"
+      "GPS tracked trucks",
+      "All KSA cities"
     ],
     badge: "Nationwide",
     icon: "MapPin"
@@ -228,3 +224,148 @@ export const FAQS = [
     arA: "نعم، نقدم خدمات النقل بين المدن من الرياض إلى جدة، الدمام، مكة، المدينة، الخبر، القصيم، وجميع محافظات المملكة."
   }
 ];
+
+export const GALLERY_IMAGES = [
+  {
+    id: 1,
+    src: "/images/gallery/work-1.jpg",
+    cloudinaryUrl: "https://res.cloudinary.com/dai2g47e4/image/upload/v1791317761/WhatsApp_Image_2026-10-06_at_6.48.04_PM_1_ea9qbh.jpg",
+    title: "Furniture & Appliance Packing",
+    arabicTitle: "تغليف الأثاث والأجهزة",
+    category: "wrapping",
+    categoryLabel: "Packing",
+    arabicCategoryLabel: "تغليف",
+    badge: "Stretch Film",
+    arabicBadge: "تغليف حراري",
+    description: "Multi-layer stretch wrap protection.",
+    arabicDescription: "تغليف حراري متين لحماية الأجهزة والأثاث."
+  },
+  {
+    id: 2,
+    src: "/images/gallery/work-2.jpg",
+    cloudinaryUrl: "https://res.cloudinary.com/dai2g47e4/image/upload/v1791317760/WhatsApp_Image_2026-10-06_at_6.48.06_PM_1_jf1rt3.jpg",
+    title: "Luxury Sofa Bubble Wrap",
+    arabicTitle: "تغليف كنب المجالس",
+    category: "sofas",
+    categoryLabel: "Sofas",
+    arabicCategoryLabel: "كنب ومجالس",
+    badge: "Bubble Wrap",
+    arabicBadge: "حماية الزوايا",
+    description: "Thick bubble wrap with corner guards.",
+    arabicDescription: "فقاعات هوائية وزوايا كرتونية واقية."
+  },
+  {
+    id: 3,
+    src: "/images/gallery/work-3.jpg",
+    cloudinaryUrl: "https://res.cloudinary.com/dai2g47e4/image/upload/v1791317760/WhatsApp_Image_2026-10-06_at_6.48.09_PM_j2rmja.jpg",
+    title: "Fragile China & Kitchenware",
+    arabicTitle: "تغليف زجاج ومطبخ",
+    category: "fragile",
+    categoryLabel: "Fragile",
+    arabicCategoryLabel: "زجاج ومطبخ",
+    badge: "Anti-Breakage",
+    arabicBadge: "ضد الكسر",
+    description: "Individual bubble wrap in heavy cartons.",
+    arabicDescription: "تغليف فردي بالفقاعات في كراتين مقواة."
+  },
+  {
+    id: 4,
+    src: "/images/gallery/work-4.jpg",
+    cloudinaryUrl: "https://res.cloudinary.com/dai2g47e4/image/upload/v1791317759/WhatsApp_Image_2026-10-06_at_6.48.11_PM_1_elnux6.jpg",
+    title: "Wardrobe Disassembly (Najjar)",
+    arabicTitle: "فك الدواليب وغرف النوم",
+    category: "carpentry",
+    categoryLabel: "Carpentry",
+    arabicCategoryLabel: "نجار محترف",
+    badge: "Master Najjar",
+    arabicBadge: "فني نجار",
+    description: "Professional dismantling and panel wrapping.",
+    arabicDescription: "فك احترافي وتغليف الألواح الخشبية."
+  },
+  {
+    id: 5,
+    src: "/images/gallery/work-5.jpg",
+    cloudinaryUrl: "https://res.cloudinary.com/dai2g47e4/image/upload/v1791317759/WhatsApp_Image_2026-10-06_at_6.48.11_PM_tntotd.jpg",
+    title: "Couch Set Dust Protection",
+    arabicTitle: "تغليف وحماية الكنب",
+    category: "sofas",
+    categoryLabel: "Sofas",
+    arabicCategoryLabel: "كنب ومجالس",
+    badge: "Dust-Proof",
+    arabicBadge: "عازل للغبار",
+    description: "Tightly sealed dust-proof wrap.",
+    arabicDescription: "تغليف محكم عازل للغبار والرطوبة."
+  },
+  {
+    id: 6,
+    src: "/images/gallery/work-6.jpg",
+    cloudinaryUrl: "https://res.cloudinary.com/dai2g47e4/image/upload/v1791317759/WhatsApp_Image_2026-10-06_at_6.48.13_PM_1_p0euvb.jpg",
+    title: "Dining Chairs Wrapping",
+    arabicTitle: "تغليف كراسي السفرة",
+    category: "wrapping",
+    categoryLabel: "Packing",
+    arabicCategoryLabel: "تغليف",
+    badge: "Upholstery Care",
+    arabicBadge: "حماية الأقمشة",
+    description: "Protective film covering wood and fabrics.",
+    arabicDescription: "حماية تامة للأقمشة والخشب من الخدش."
+  },
+  {
+    id: 7,
+    src: "/images/gallery/work-7.jpg",
+    cloudinaryUrl: "https://res.cloudinary.com/dai2g47e4/image/upload/v1791317761/WhatsApp_Image_2026-10-06_at_6.48.13_PM_yfwkjy.jpg",
+    title: "Salon Sofa Strapping",
+    arabicTitle: "تثبيت وتغليف الصالون",
+    category: "sofas",
+    categoryLabel: "Sofas",
+    arabicCategoryLabel: "كنب ومجالس",
+    badge: "Strapped",
+    arabicBadge: "تثبيت محكم",
+    description: "Double wrap with heavy-duty tension straps.",
+    arabicDescription: "تثبيت محكم بأشرطة متينة للأمان أثناء النقل."
+  },
+  {
+    id: 8,
+    src: "/images/gallery/work-8.jpg",
+    cloudinaryUrl: "https://res.cloudinary.com/dai2g47e4/image/upload/v1791317759/WhatsApp_Image_2026-10-06_at_6.48.14_PM_ultjeb.jpg",
+    title: "Full Villa Relocation",
+    arabicTitle: "نقل فيلا متكاملة",
+    category: "villa",
+    categoryLabel: "Villa",
+    arabicCategoryLabel: "نقل فلل",
+    badge: "Villa Move",
+    arabicBadge: "نقل فيلا",
+    description: "Split ACs, glass tables & racks in transit.",
+    arabicDescription: "نقل مكيفات سبليت وطاولات زجاج ودواليب."
+  },
+  {
+    id: 9,
+    src: "/images/gallery/work-9.jpg",
+    cloudinaryUrl: "https://res.cloudinary.com/dai2g47e4/image/upload/v1791317759/WhatsApp_Image_2026-10-06_at_6.48.16_PM_aowt1i.jpg",
+    title: "Sectional Sofa Packaging",
+    arabicTitle: "تغليف كنب مقسم",
+    category: "sofas",
+    categoryLabel: "Sofas",
+    arabicCategoryLabel: "كنب ومجالس",
+    badge: "Transit Ready",
+    arabicBadge: "جاهز للشحن",
+    description: "Heavy cardboard casing for long distances.",
+    arabicDescription: "كرتون مقوى لحماية النقل بين المدن."
+  },
+  {
+    id: 10,
+    src: "/images/gallery/work-10.jpg",
+    cloudinaryUrl: "https://res.cloudinary.com/dai2g47e4/image/upload/v1791317759/WhatsApp_Image_2026-10-06_at_6.48.21_PM_ksyelr.jpg",
+    title: "Bed & Cushion Packaging",
+    arabicTitle: "تغليف الأسرة والمخدات",
+    category: "carpentry",
+    categoryLabel: "Carpentry",
+    arabicCategoryLabel: "نجار محترف",
+    badge: "Hygienic",
+    arabicBadge: "تغليف نظيف",
+    description: "Clean hygienic wrap for mattresses and beds.",
+    arabicDescription: "تغليف صحي للمراتب والمفارش لضمان نظافتها."
+  }
+];
+
+

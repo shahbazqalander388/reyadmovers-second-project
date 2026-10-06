@@ -6,31 +6,31 @@ const stepIcons = [MessageSquare, Wrench, Truck, CheckCircle2];
 
 export default function ProcessFlow() {
   return (
-    <section id="process" className="py-20 bg-slate-950 text-white relative">
+    <section id="process" className="py-12 sm:py-20 bg-slate-950 text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
             Simple 4-Step Journey
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
             How We Move You Safely Across Riyadh
           </h2>
-          <p className="font-arabic text-xl text-emerald-400 font-semibold">
+          <p className="font-arabic text-lg sm:text-xl text-emerald-400 font-semibold">
             خطوات نقل العفش بكل سهولة وأمان
           </p>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-300 text-xs sm:text-base leading-relaxed">
             From your very first message to the final tightened screw in your new home, our systematic process guarantees zero hassle and complete peace of mind.
           </p>
         </div>
 
         {/* 4 Process Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
           {PROCESS_STEPS.map((step, idx) => {
             const Icon = stepIcons[idx] || Truck;
             return (
               <div
                 key={idx}
-                className="relative p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg"
+                className="relative p-4 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg"
               >
                 {/* Step number badge */}
                 <div className="flex items-center justify-between mb-4">

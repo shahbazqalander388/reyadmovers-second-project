@@ -4,7 +4,7 @@ import { BUSINESS_INFO } from '../data/siteData';
 
 export default function TopBar() {
   return (
-    <div className="bg-slate-950 text-slate-300 text-xs sm:text-sm border-b border-slate-800/80">
+    <div className="hidden md:block bg-slate-950 text-slate-300 text-xs sm:text-sm border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex flex-wrap items-center justify-between gap-y-2">
           {/* Left: Contact details */}

@@ -6,27 +6,36 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800/80 pt-16 pb-24 sm:pb-16">
+    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800/80 pt-12 sm:pt-16 pb-24 sm:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-slate-800/80">
           {/* Brand & Summary (2 columns) */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-3.5 sm:space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-slate-950 font-black">
-                <Truck className="w-6 h-6" />
+              <div className="h-11 w-11 sm:h-12 sm:w-12 rounded-xl bg-white p-1 flex items-center justify-center shrink-0 border border-slate-700/60 shadow-md">
+                <img
+                  src={BUSINESS_INFO.logo}
+                  alt="Riyadh Movers Services"
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    if (e.target.src !== BUSINESS_INFO.cloudinaryLogo) {
+                      e.target.src = BUSINESS_INFO.cloudinaryLogo;
+                    }
+                  }}
+                />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-black text-white tracking-tight">
-                  Riyadh Movers <span className="text-emerald-400">& Experts</span>
+                <span className="text-base sm:text-lg font-black text-white tracking-tight">
+                  Riyadh Movers <span className="text-emerald-400">Services</span>
                 </span>
                 <span className="text-xs font-arabic text-emerald-400">
-                  خبراء نقل العفش والتغليف بالرياض
+                  خدمات نقل العفش والتغليف بالرياض
                 </span>
               </div>
             </div>
 
             <p className="text-sm text-slate-300 leading-relaxed pr-4">
-              Riyadh Movers & Experts is Saudi Arabia's premier residential, villa, and commercial moving specialist. Delivering 100% damage-free packing, certified carpentry assembly, and swift Dyna transport 24/7 across Riyadh and all KSA provinces.
+              Riyadh Movers Services is Saudi Arabia's premier residential, villa, and commercial moving specialist. Delivering 100% damage-free packing, certified carpentry assembly, and swift Dyna transport 24/7 across Riyadh and all KSA provinces.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
@@ -82,6 +91,9 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <a href="#services" className="hover:text-emerald-400 transition-colors">Our Services (الخدمات)</a>
+              </li>
+              <li>
+                <a href="#gallery" className="hover:text-emerald-400 transition-colors">Our Work Gallery (معرض الأعمال)</a>
               </li>
               <li>
                 <a href="#why-us" className="hover:text-emerald-400 transition-colors">Why Choose Us (لماذا نحن)</a>

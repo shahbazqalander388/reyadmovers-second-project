@@ -10,22 +10,22 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="py-20 bg-slate-900/40 relative">
+    <section className="py-12 sm:py-20 bg-slate-900/40 relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+        <div className="text-center space-y-3 mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
             <HelpCircle className="w-3.5 h-3.5" />
             Frequently Asked Questions
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
             Got Questions About Relocating in Riyadh?
           </h2>
-          <p className="font-arabic text-xl text-emerald-400 font-semibold">
+          <p className="font-arabic text-lg sm:text-xl text-emerald-400 font-semibold">
             الأسئلة الشائعة حول نقل وتغليف الأثاث
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {FAQS.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -40,7 +40,7 @@ export default function FaqSection() {
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+                  className="w-full p-4 sm:p-6 text-left flex items-center justify-between gap-3 sm:gap-4 focus:outline-none"
                   aria-expanded={isOpen}
                 >
                   <div className="space-y-1 pr-2">

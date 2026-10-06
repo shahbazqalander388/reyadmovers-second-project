@@ -31,30 +31,30 @@ export default function CoverageAreas() {
   ];
 
   return (
-    <section className="py-20 bg-slate-950 text-white relative">
+    <section id="areas" className="py-12 sm:py-20 bg-slate-950 text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
             <Navigation className="w-3.5 h-3.5" />
             Extensive Coverage Across the Capital
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
             Servicing Every District in Riyadh & Beyond
           </h2>
-          <p className="font-arabic text-xl text-emerald-400 font-semibold">
+          <p className="font-arabic text-lg sm:text-xl text-emerald-400 font-semibold">
             تغطية شاملة لجميع أحياء الرياض ومدن المملكة
           </p>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-300 text-xs sm:text-base leading-relaxed">
             Our closed moving trucks are stationed across northern, central, eastern, and western Riyadh for rapid same-day response within 60 minutes.
           </p>
         </div>
 
         {/* Riyadh 4-Zone Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {zones.map((zone, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-4 shadow-lg"
+              className="p-4 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-3 sm:space-y-4 shadow-lg"
             >
               <div className="flex items-center gap-2.5 text-white font-bold text-base pb-2 border-b border-slate-800">
                 <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -73,19 +73,19 @@ export default function CoverageAreas() {
         </div>
 
         {/* Inter-city Banner */}
-        <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 border border-slate-800 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl">
+        <div className="mt-8 sm:mt-10 p-4 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 border border-slate-800 flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 shadow-xl">
           <div className="space-y-2 text-center lg:text-left">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
               Inter-City Highway Cargo Line (نقل بين المدن)
             </span>
-            <h3 className="text-xl font-bold text-white">
+            <h3 className="text-lg sm:text-xl font-bold text-white">
               Daily Shifting Between Riyadh and All Saudi Provinces
             </h3>
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2 pt-1">
               {intercityRoutes.map((route, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 text-slate-300 text-xs border border-slate-700 font-medium"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 text-xs border border-slate-700 font-medium"
                 >
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                   <span>{route}</span>
@@ -98,7 +98,7 @@ export default function CoverageAreas() {
             href={BUSINESS_INFO.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg shadow-emerald-500/25 active:scale-95 transition-all text-center"
+            className="w-full sm:w-auto shrink-0 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg shadow-emerald-500/25 active:scale-95 transition-all text-center"
           >
             Inquire Inter-City Moving
           </a>
