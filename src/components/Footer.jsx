@@ -1,13 +1,24 @@
 import React from 'react';
-import { Truck, Phone, Mail, MapPin, Clock, MessageSquare, ShieldCheck } from 'lucide-react';
+import { Truck, Phone, Mail, MapPin, Clock, MessageSquare, ShieldCheck, Map } from 'lucide-react';
 import { BUSINESS_INFO, SERVICES } from '../data/siteData';
+import { RIYADH_LOCATIONS } from '../data/locationsData';
 
-export default function Footer() {
+export default function Footer({ onSelectDistrictSlug }) {
   const currentYear = new Date().getFullYear();
+
+  const handleDistrictClick = (e, slug) => {
+    e.preventDefault();
+    if (onSelectDistrictSlug) {
+      onSelectDistrictSlug(slug);
+    } else {
+      window.location.hash = `#/${slug}`;
+    }
+  };
 
   return (
     <footer className="bg-slate-950 text-slate-400 border-t border-slate-800/80 pt-12 sm:pt-16 pb-24 sm:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main 5-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-slate-800/80">
           {/* Brand & Summary (2 columns) */}
           <div className="lg:col-span-2 space-y-3.5 sm:space-y-4">
@@ -29,7 +40,7 @@ export default function Footer() {
                   Riyadh Movers <span className="text-emerald-400">Services</span>
                 </span>
                 <span className="text-xs font-arabic text-emerald-400">
-                  خدمات نقل العفش والتغليف بالرياض
+                  خبراء خدمات نقل العفش والتغليف بالرياض
                 </span>
               </div>
             </div>
@@ -105,6 +116,9 @@ export default function Footer() {
                 <a href="#process" className="hover:text-emerald-400 transition-colors">Moving Process (خطوات العمل)</a>
               </li>
               <li>
+                <a href="#areas" className="hover:text-emerald-400 transition-colors">Riyadh Districts (أحياء الرياض)</a>
+              </li>
+              <li>
                 <a href="#contact" className="hover:text-emerald-400 transition-colors">Location & Contact (تواصل معنا)</a>
               </li>
             </ul>
@@ -119,7 +133,7 @@ export default function Footer() {
               {SERVICES.map((s) => (
                 <li key={s.id}>
                   <a href="#services" className="hover:text-emerald-400 transition-colors block truncate">
-                    {s.title}
+                    {s.title} ({s.arabicTitle})
                   </a>
                 </li>
               ))}
@@ -166,15 +180,44 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-emerald-400 transition-colors"
                 >
-                  Riyadh, Saudi Arabia (View Map)
+                  King Fahd Rd, Riyadh, KSA (View Map)
                 </a>
               </li>
 
-              <li className="flex items-center gap-2.5 text-emerald-400">
+              <li className="flex items-center gap-2.5 text-emerald-400 font-medium">
                 <Clock className="w-4 h-4 shrink-0" />
-                <span>24/7 All Week Service</span>
+                <span>24/7 Available (Every Day)</span>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* DELIVERABLE 4: DEDICATED FOOTER PROGRAMMATIC SEO DISTRICT NAVIGATION HUB */}
+        <div className="py-8 sm:py-10 border-b border-slate-800/80 space-y-4">
+          <div className="flex items-center gap-2 text-white font-bold text-sm uppercase tracking-wider">
+            <Map className="w-4 h-4 text-emerald-400" />
+            <span>Riyadh Municipal Coverage & Programmatic Local SEO Hub (دليل أحياء الرياض لنقل العفش)</span>
+          </div>
+          <p className="text-xs text-slate-400 leading-relaxed max-w-4xl">
+            Explore dedicated moving, furniture dismantling (Najjar), packaging supplies, and enclosed Dyna dispatch times across all 16 major districts and neighborhoods in Riyadh:
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 pt-2">
+            {RIYADH_LOCATIONS.map((loc) => (
+              <a
+                key={loc.slug}
+                href={`#/${loc.slug}`}
+                onClick={(e) => handleDistrictClick(e, loc.slug)}
+                className="text-xs text-slate-300 hover:text-emerald-400 bg-slate-900/60 hover:bg-slate-900 p-2.5 rounded-xl border border-slate-800/80 transition-all flex items-center justify-between group"
+              >
+                <span className="truncate">
+                  Movers in <strong>{loc.nameEn}</strong> <span className="text-[11px] font-arabic text-emerald-400/90 font-normal">({loc.nameAr})</span>
+                </span>
+                <span className="text-[10px] text-slate-500 group-hover:text-emerald-400 shrink-0 ml-1">
+                  ~{loc.dispatchTime}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
 
@@ -185,7 +228,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-2 text-slate-400">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Licensed & Insured Moving Services across Saudi Arabia</span>
+            <span>Licensed & Insured Moving Services across Riyadh & Saudi Arabia</span>
           </div>
         </div>
       </div>

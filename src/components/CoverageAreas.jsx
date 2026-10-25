@@ -1,24 +1,46 @@
 import React from 'react';
-import { MapPin, Navigation, CheckCircle2 } from 'lucide-react';
+import { MapPin, Navigation, CheckCircle2, ArrowRight } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/siteData';
+import { RIYADH_LOCATIONS } from '../data/locationsData';
 
-export default function CoverageAreas() {
+export default function CoverageAreas({ onSelectDistrictSlug }) {
   const zones = [
     {
       name: "North Riyadh (شمال الرياض)",
-      districts: ["Al Nakheel (النخيل)", "Al Yasmin (الياسمين)", "Al Narjis (النرجس)", "Al Sahafa (الصحافة)", "Al Aqiq (العقيق)", "Al Qirawan (القيروان)"]
+      slugs: [
+        "movers-in-al-nakheel-riyadh",
+        "movers-in-al-yasmin-riyadh",
+        "movers-in-al-narjis-riyadh",
+        "movers-in-al-sahafa-riyadh",
+        "movers-in-al-aqiq-riyadh",
+        "movers-in-hittin-riyadh",
+        "movers-in-al-qirawan-riyadh"
+      ]
     },
     {
       name: "Central & Downtown (وسط الرياض)",
-      districts: ["Al Olaya (العليا)", "Al Malaz (الملز)", "Al Sulaimaniyah (السليمانية)", "Al Wurud (الورود)", "Al Murabba (المربع)", "Al Muruj (المروج)"]
+      slugs: [
+        "movers-in-al-olaya-riyadh",
+        "movers-in-al-malaz-riyadh",
+        "movers-in-al-sulaimaniyah-riyadh",
+        "movers-in-al-wurud-riyadh",
+        "movers-in-al-mursalat-riyadh"
+      ]
     },
     {
       name: "East Riyadh (شرق الرياض)",
-      districts: ["Al Rawdah (الروضة)", "Al Hamra (الحمراء)", "Al Yarmouk (اليرموك)", "Al Munsiyah (المنسية)", "Ishbiliyah (إشبيلية)", "Al Quds (القدس)"]
+      slugs: [
+        "movers-in-al-rawdah-riyadh",
+        "movers-in-al-hamra-riyadh",
+        "movers-in-al-yarmouk-riyadh"
+      ]
     },
     {
       name: "West & South Riyadh (غرب وجنوب الرياض)",
-      districts: ["Diplomatic Quarter / DQ (حي السفارات)", "Dhahrat Laban (ظهرة لبن)", "Al Suwaidi (السويدي)", "Shubra (شبرا)", "Al Shifa (الشفاء)", "Badi'ah (البديعة)"]
+      slugs: [
+        "movers-in-diplomatic-quarter-riyadh"
+      ],
+      extraDistricts: ["Dhahrat Laban (ظهرة لبن)", "Al Suwaidi (السويدي)", "Shubra (شبرا)", "Al Shifa (الشفاء)"]
     }
   ];
 
@@ -29,6 +51,15 @@ export default function CoverageAreas() {
     "Riyadh ⇄ Qassim & Buraidah (الرياض - القصيم وبريدة)",
     "Riyadh ⇄ Tabuk, Hail & Abha (الرياض - تبوك وحائل وأبها)"
   ];
+
+  const handleDistrictClick = (e, slug) => {
+    e.preventDefault();
+    if (onSelectDistrictSlug) {
+      onSelectDistrictSlug(slug);
+    } else {
+      window.location.hash = `#/${slug}`;
+    }
+  };
 
   return (
     <section id="areas" className="py-12 sm:py-20 bg-slate-950 text-white relative">
@@ -45,29 +76,54 @@ export default function CoverageAreas() {
             تغطية شاملة لجميع أحياء الرياض ومدن المملكة
           </p>
           <p className="text-slate-300 text-xs sm:text-base leading-relaxed">
-            Our closed moving trucks are stationed across northern, central, eastern, and western Riyadh for rapid same-day response within 60 minutes.
+            Our closed moving trucks are stationed across northern, central, eastern, and western Riyadh for rapid same-day response within 20 to 30 minutes. Click any neighborhood to explore dedicated local pricing and Dyna dispatch details.
           </p>
         </div>
 
-        {/* Riyadh 4-Zone Grid */}
+        {/* Riyadh 4-Zone Interactive SEO Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {zones.map((zone, idx) => (
             <div
               key={idx}
-              className="p-4 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-3 sm:space-y-4 shadow-lg"
+              className="p-4 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-3 sm:space-y-4 shadow-lg flex flex-col justify-between"
             >
-              <div className="flex items-center gap-2.5 text-white font-bold text-base pb-2 border-b border-slate-800">
-                <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>{zone.name}</span>
+              <div>
+                <div className="flex items-center gap-2.5 text-white font-bold text-base pb-2 border-b border-slate-800">
+                  <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>{zone.name}</span>
+                </div>
+                <ul className="space-y-2 pt-3">
+                  {zone.slugs.map((slug) => {
+                    const loc = RIYADH_LOCATIONS.find((l) => l.slug === slug);
+                    if (!loc) return null;
+                    return (
+                      <li key={slug}>
+                        <a
+                          href={`#/${slug}`}
+                          onClick={(e) => handleDistrictClick(e, slug)}
+                          className="text-xs text-slate-300 hover:text-emerald-400 flex items-center justify-between group py-1 transition-colors"
+                        >
+                          <span className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 group-hover:scale-125 transition-transform"></span>
+                            <span>{loc.nameEn} ({loc.nameAr})</span>
+                          </span>
+                          <ArrowRight className="w-3 h-3 text-slate-500 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all" />
+                        </a>
+                      </li>
+                    );
+                  })}
+                  {zone.extraDistricts && zone.extraDistricts.map((extra, i) => (
+                    <li key={i} className="text-xs text-slate-400 flex items-center gap-2 py-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
+                      <span>{extra}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-2">
-                {zone.districts.map((d, i) => (
-                  <li key={i} className="text-xs text-slate-300 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                    <span>{d}</span>
-                  </li>
-                ))}
-              </ul>
+
+              <div className="pt-2 text-[11px] text-slate-400 border-t border-slate-800/80">
+                <span className="text-emerald-400 font-semibold">24/7 Service</span> • Padded Enclosed Dyna
+              </div>
             </div>
           ))}
         </div>
@@ -98,9 +154,9 @@ export default function CoverageAreas() {
             href={BUSINESS_INFO.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto shrink-0 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg shadow-emerald-500/25 active:scale-95 transition-all text-center"
+            className="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm whitespace-nowrap transition-colors shadow-lg shadow-emerald-500/20 active:scale-95 shrink-0"
           >
-            Inquire Inter-City Moving
+            Inquire Intercity Route (تسعير النقل بين المدن)
           </a>
         </div>
       </div>
