@@ -11,12 +11,12 @@ export default function FloatingActions() {
           href={BUSINESS_INFO.phoneHref}
           className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-900 border-2 border-emerald-500 text-emerald-400 shadow-2xl shadow-slate-950/80 hover:bg-slate-800 hover:scale-110 active:scale-95 transition-all duration-200"
           aria-label="Direct Phone Call"
-          title="Direct Phone Call: +966 56 469 4614"
+          title={`Direct Phone Call: ${BUSINESS_INFO.phone}`}
         >
           <Phone className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse" />
           {/* Tooltip on hover */}
           <span className="hidden md:group-hover:inline-block absolute left-16 px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-semibold whitespace-nowrap shadow-lg border border-slate-700 pointer-events-none transition-all">
-            Call +966 56 469 4614
+            Call {BUSINESS_INFO.phone}
           </span>
         </a>
       </div>

@@ -90,7 +90,7 @@ export default function Hero() {
                 className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm sm:text-lg font-bold border-2 border-slate-700 hover:border-emerald-500/50 shadow-lg hover:scale-[1.02] active:scale-98 transition-all duration-200"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 shrink-0" />
-                <span className="hidden sm:inline">Call +966 56 469 4614</span>
+                <span className="hidden sm:inline">Call {BUSINESS_INFO.phone}</span>
                 <span className="sm:hidden">Call Now (اتصال مباشر)</span>
               </a>
             </div>
